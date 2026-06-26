@@ -812,7 +812,7 @@ h3 {
   width: calc(100% - 24px);
   height: 100%;
   opacity: 0;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 18px;
   transition:
     opacity 0.5s ease,
