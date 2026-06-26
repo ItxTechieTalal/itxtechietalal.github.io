@@ -1176,19 +1176,19 @@ footer {
     height: 100%;
   }
 
- .project-gallery {
+  .project-gallery {
     width: 100%;
     aspect-ratio: 16 / 9;
-    min-height: 520px;   /* Increased height */
+    min-height: 520px; /* Increased height */
     height: auto;
     margin-top: 24px;
     padding: 0;
-}
+  }
 
-.highlight-project .project-gallery {
+  .highlight-project .project-gallery {
     aspect-ratio: 16 / 9;
-    min-height: 540px;   /* Increased height */
-}
+    min-height: 540px; /* Increased height */
+  }
 
   .project-card-body {
     flex-direction: column;
