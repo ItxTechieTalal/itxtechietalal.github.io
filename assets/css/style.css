@@ -875,6 +875,10 @@ h3 {
   line-height: 1.5;
 }
 
+.project-content .btn {
+  margin-top: 15px;
+}
+
 /* ----- CONTACT BOX ----- */
 .contact-row {
   align-items: stretch;
