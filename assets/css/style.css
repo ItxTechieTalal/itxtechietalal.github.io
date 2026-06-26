@@ -28,10 +28,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
   background:
     linear-gradient(90deg, rgba(0, 167, 194, 0.055) 1px, transparent 1px),
     linear-gradient(180deg, rgba(93, 85, 214, 0.045) 1px, transparent 1px),
@@ -1158,6 +1160,41 @@ footer {
   .project-card {
     min-height: auto;
   }
+
+  /* .project-gallery {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 380px;
+    height: auto;
+    margin-top: 24px;
+    padding: 0;
+  } */
+
+  .project-gallery img {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+ .project-gallery {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 450px;   /* Increased height */
+    height: auto;
+    margin-top: 24px;
+    padding: 0;
+}
+
+.highlight-project .project-gallery {
+    aspect-ratio: 16 / 9;
+    min-height: 470px;   /* Increased height */
+}
+
+  .project-card-body {
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px;
+  }
 }
 
 /* ----- MEDIA QUERY == 600px / RESPONSIVE ----- */
@@ -1251,6 +1288,21 @@ footer {
 
   .highlight-project .project-media {
     aspect-ratio: 16 / 9;
+  }
+
+  .project-gallery {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: auto;
+    height: auto;
+    padding: 0;
+  }
+
+  .project-gallery img {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
   }
 
   .form-inputs {
