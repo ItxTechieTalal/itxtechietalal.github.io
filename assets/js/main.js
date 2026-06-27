@@ -161,3 +161,67 @@ projectGalleries.forEach((gallery) => {
     slides[currentIndex].classList.add("active");
   }, 2800);
 });
+
+const contactForm = document.getElementById("contact-form");
+const EMAILJS_USER_ID = "YOUR_EMAILJS_USER_ID";
+const EMAILJS_SERVICE_ID = "service_16v515k";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+
+const emailJsIsConfigured =
+  window.emailjs &&
+  EMAILJS_USER_ID.startsWith("user_") &&
+  EMAILJS_SERVICE_ID.startsWith("service_") &&
+  EMAILJS_TEMPLATE_ID.startsWith("template_");
+
+if (emailJsIsConfigured) {
+  emailjs.init(EMAILJS_USER_ID);
+}
+
+console.log(
+  "EmailJS available:",
+  !!window.emailjs,
+  "configured:",
+  emailJsIsConfigured,
+);
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = contactForm
+      .querySelector("input[name='from_name']")
+      .value.trim();
+    const email = contactForm
+      .querySelector("input[name='reply_to']")
+      .value.trim();
+    const message = contactForm
+      .querySelector("textarea[name='message']")
+      .value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill in all fields before sending your message.");
+      return;
+    }
+
+    if (emailJsIsConfigured) {
+      emailjs
+        .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
+        .then(() => {
+          alert("Message sent! Thank you for reaching out.");
+          contactForm.reset();
+        })
+        .catch((error) => {
+          console.error("EmailJS error:", error);
+          alert("Unable to send message. Please try again later.");
+        });
+      return;
+    }
+
+    const subject = `Portfolio enquiry from ${name}`;
+    const body = `Name: ${name}\r\nEmail: ${email}\r\n\r\n${message}`;
+    const gmailCompose = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=mtalalrasheed127@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    alert("EmailJS is not configured yet. Opening Gmail compose.");
+    window.location.href = gmailCompose;
+  });
+}

@@ -57,7 +57,12 @@
         </div>
 
         <div class="nav-button">
-          <a class="btn compact-btn" href="mailto:mtalalrasheed127@gmail.com">
+          <a
+            class="btn compact-btn"
+            href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=mtalalrasheed127@gmail.com&su=Project%20Inquiry"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="uil uil-envelope"></i>
             Contact
           </a>
@@ -185,7 +190,7 @@
 
           <div class="stats-grid">
             <div class="stat-card">
-              <strong>15+</strong>
+              <strong>25+</strong>
               <span>Finished Projects</span>
             </div>
             <div class="stat-card">
@@ -197,8 +202,8 @@
               <span>Game Downloads</span>
             </div>
             <div class="stat-card">
-              <strong>7</strong>
-              <span>ABC World Languages</span>
+              <strong>1000+</strong>
+              <span>Hours of Coding</span>
             </div>
           </div>
 
@@ -698,24 +703,19 @@
             </div>
 
             <div class="col">
-              <form
-                class="form-control"
-                action="mailto:mtalalrasheed127@gmail.com"
-                method="post"
-                enctype="text/plain"
-              >
+              <form class="form-control" id="contact-form">
                 <div class="form-inputs">
                   <input
                     type="text"
                     class="input-field"
-                    name="name"
+                    name="from_name"
                     placeholder="Name"
                     required
                   />
                   <input
                     type="email"
                     class="input-field"
-                    name="email"
+                    name="reply_to"
                     placeholder="Email"
                     required
                   />
@@ -796,6 +796,9 @@
 
     <!-- ----- SCROLL REVEAL JS Link----- -->
     <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- EMAILJS SDK ----- -->
+    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
 
     <!-- ----- MAIN JS ----- -->
     <script src="assets/js/main.js"></script>
